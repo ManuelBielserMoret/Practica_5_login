@@ -41,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
             if (correo.equals("correo@gmail.com") && contraseña.equals("123")){
                 textView5.setText("usuario y contraseña correctos");
+                textView5.setTextColor(getResources().getColor(R.color.verde_exito, getTheme()));
             }else{
                 textView5.setText("usuario o contraseña incorrectos");
+                textView5.setTextColor(getResources().getColor(R.color.rojo_error, getTheme()));
             }
         });
     }
