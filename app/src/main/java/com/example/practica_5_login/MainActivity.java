@@ -1,7 +1,6 @@
 package com.example.practica_5_login;
 
 import android.os.Bundle;
-import android.view.View;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         bContinuar.setOnClickListener(v ->  {
             String correo = tCorreo.getText().toString();
             String contraseña = tContraseña.getText().toString();
+            Boolean recordar = sRecordar.isChecked();
 
             if (correo.equals("correo@gmail.com") && contraseña.equals("123")){
                 textView5.setText("usuario y contraseña correctos");
