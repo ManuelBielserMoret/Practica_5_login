@@ -1,5 +1,6 @@
 package com.example.practica_5_login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,21 +38,22 @@ public class MainActivity extends AppCompatActivity {
         bContinuar.setOnClickListener(v ->  {
             String correo = tCorreo.getText().toString();
             String contraseña = tContraseña.getText().toString();
-            Boolean recordar = sRecordar.isChecked();
 
-            if (correo.equals("correo@gmail.com") && contraseña.equals("123")){
-                if (recordar) {
-
-                    textView5.setText("usuario y contraseña correctos. Almacenados para siguientes accesos");
-                    textView5.setTextColor(getResources().getColor(R.color.verde_exito, getTheme()));
-                }else{
-                    textView5.setText("usuario y contraseña correctos");
-                    textView5.setTextColor(getResources().getColor(R.color.verde_exito, getTheme()));
-                }
+            if (correo.equals("correo@gmail.com") && contraseña.equals("123")) {
+                Intent intent = new Intent(MainActivity.this, MenuPrincipalActivity.class);
+                intent.putExtra("Email_Usuario", correo);
+                startActivity(intent);
             }else{
                 textView5.setText("usuario o contraseña incorrectos");
                 textView5.setTextColor(getResources().getColor(R.color.rojo_error, getTheme()));
             }
         });
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tCorreo.setText("");
+        tContraseña.setText("");
+        textView5.setText("");
     }
 }
