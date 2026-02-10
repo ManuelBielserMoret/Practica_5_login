@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         bContinuar.setOnClickListener(v ->  {
             String correo = tCorreo.getText().toString();
             String contraseña = tContraseña.getText().toString();
-            boolean recordar = sRecordar.isChecked();
 
             if (correo.equals("correo@gmail.com") && contraseña.equals("123")) {
                 Intent intent = new Intent(MainActivity.this, MenuPrincipalActivity.class);
