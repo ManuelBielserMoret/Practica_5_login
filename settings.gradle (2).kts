@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "actividadInterfaces"
+rootProject.name = "Practica_5_login"
 include(":app")
- 
